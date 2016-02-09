@@ -6,6 +6,10 @@ Better default Google Chart styles, just copy and paste to your project.
 
 ![Preview](https://dl.dropboxusercontent.com/s/ke3vv2np645exx6/weekdone-charts.png?dl=0&preview=weekdone-charts.png)
 
+
+[![Preview](https://dl.dropboxusercontent.com/s/ke3vv2np645exx6/weekdone-charts.png?dl=0&preview=weekdone-charts.png)](http://htmlpreview.github.io/?https://github.com/weekdone/GoogleChartStyles/blob/master/index.html)
+
+
 ### Features
 * plug-and-play
 * light and dark modes
