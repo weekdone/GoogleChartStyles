@@ -1,0 +1,58 @@
+table, .table{
+  border-collapse: separate;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.table ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.table ul li{
+	display: table;
+	width:100%;
+}
+
+.table ul li .td, .table ul li .th{
+	display: table-cell;
+	width:33.33%;
+}
+
+th, .th{
+  text-align: left;
+  font-weight: bold;
+}
+
+th,
+td, 
+.th, 
+.td{
+  padding: 0.5em 0.25em;
+  line-height: inherit;
+}
+
+th, .th { vertical-align: bottom }
+td, .td { vertical-align: top }
+
+tr:nth-child(odd) td, .table .tbody li:nth-child(odd){
+	background:rgba(255,255,255,0.12);
+}
+
+table.overflow, table.overflow thead, table.overflow tbody{
+	width:100%;
+	display: block;
+}	
+table.overflow tbody, .overflow .tbody{
+    height: 8em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+table.overflow tbody td, table.overflow thead th {
+    width: 100%; 
+    box-sizing: border-box;
+}

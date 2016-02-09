@@ -1,0 +1,275 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Better Google Charts styles by Weekdone</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+  <!-- example charts - dark -->
+  <div class="block">
+    <div class="container">
+      <div class="span4">
+        <h2>SteppedAreaChart</h2>
+        <div id="steppedareachart" class="chart" class="chart"></div>  
+      </div>
+      <div class="span4">
+        <h2>Areachart</h2>
+        <div id="areachart" class="chart"></div>
+      </div>
+      <div class="span4">
+        <h2>Columnchart</h2>
+        <div id="columnchart" class="chart"></div>
+      </div>
+      <div class="span4">
+        <h2>Geochart</h2>
+        <div id="geochart" class="chart"></div>
+      </div>
+      <div class="span4">
+        <h2>PieChart</h2>
+        <div id="piechart" class="chart"></div>      
+      </div>
+      <div class="span4">
+        <h2>LineChart</h2>
+        <div id="linechart" class="chart"></div>      
+      </div>
+    </div>
+  </div>
+
+  <!-- example charts - light -->
+  <div class="block light">
+    <div class="container">
+      <div class="span4">
+        <h2>SteppedAreaChart</h2>
+        <div id="steppedareachartlight" class="chart"></div>  
+      </div>
+      <div class="span4">
+        <h2>Areachart</h2>
+        <div id="areachartlight" class="chart"></div>
+      </div>
+      <div class="span4">
+        <h2>Columnchart</h2>
+        <div id="columnchartlight" class="chart"></div>
+      </div>
+      <div class="span4">
+        <h2>Geochart</h2>
+        <div id="geochartlight" class="chart"></div>
+      </div>
+      <div class="span4">
+        <h2>PieChart</h2>
+        <div id="piechartlight" class="chart"></div>      
+      </div>
+      <div class="span4">
+        <h2>LineChart</h2>
+        <div id="linechartlight" class="chart"></div>      
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+  google.load("visualization", "1", {packages:["geochart", "bar", "corechart"]});
+  
+  google.setOnLoadCallback(drawChart);
+  
+  function drawChart() {
+    // just example data for example charts
+    var geodata = google.visualization.arrayToDataTable([
+      ['Country', 'Paying users'],
+      ['Germany', 200],
+      ['United States', 300],
+      ['Brazil', 400],
+      ['Canada', 500],
+      ['France', 600],
+      ['RU', 700]
+      ]);
+    var data2 = google.visualization.arrayToDataTable([
+      ['MRR', 'Revenue', 'Cashbase', 'Churn', 'Costs' ],
+      ['1-8 jan',   800,  1200, -200, -1200],
+      ['9-15 jan',  500,  1500, -500, -1200],
+      ['16-23 jan', 900,  1100, -100, -1200],
+      ['24-31 jan', 200,  1800, -800, -1200],
+      ['1-8 jan',   500,  1500, -500, -1200],
+      ['9-15 jan',  700,  1300, -300, -1200],
+      ['16-23 jan', 600,  1400, -400, -1200] 
+      ]);
+    var linechartdata = google.visualization.arrayToDataTable([
+      ['Day', 'New visitors'],
+      ['1 june',   Math.round(Math.random()*100+100)], 
+      ['2 june',   Math.round(Math.random()*100+100)], 
+      ['3 june',   Math.round(Math.random()*100+100)], 
+      ['4 june',   Math.round(Math.random()*100+100)], 
+      ['5 june',   Math.round(Math.random()*100+100)], 
+      ['6 june',   Math.round(Math.random()*100+100)], 
+      ['7 june',   Math.round(Math.random()*100+100)], 
+      ['8 june',   Math.round(Math.random()*100+100)], 
+      ]);
+    var data3 = google.visualization.arrayToDataTable([
+      ['Day', 'Total', 'Web', 'iOS', 'Android'],
+      ['18',   1200,  500, 100, 600],
+      ['19',  2500,  900, 800, 800],
+      ['20',     2000,  700, 300, 1000],
+      ['21',     1200,  500, 200, 400],
+      ['22',        700,  200, 100, 400],
+      ['23',       800,  400, 100, 300],
+      ['24',   1200,  500, 100, 600],
+      ['25',  2500,  900, 800, 800],
+      ['26',     2000,  700, 300, 1000],
+      ['27',     1200,  500, 200, 400],
+      ['28',        700,  200, 100, 400],
+      ['29',       800,  400, 100, 300],        
+      ]);
+    var annualgrowthdata = google.visualization.arrayToDataTable([
+      ['Month', 'Paying Companies', 'Users at paying', 'Monthly revenue $'],
+      ['J',   400,  4500, 35000],
+      ['F',   500,  5500, 45000],
+      ['M',   550,  6500, 55000],
+      ['A',   600,  7500, 65000],
+      ['M',   800,  8500, 75000],
+      ['J',   800,  9500, 85000],
+      ['J',   900,  10500, 95000],
+      ['A',   1000,  11500, 105000],
+      ['S',  1200,  12500, 115000],
+      ['O',   1500,  13500, 125000],
+      ['N',   1600,  14500, 135000],
+      ['D',   1620,  15500, 145000]
+      ]);
+    var piedata = google.visualization.arrayToDataTable([
+      ['Name', 'Count'],
+      ['slideshare',   70],
+      ['facebook',  20],
+      ['linkedin',     15], 
+      ['twitter',   5]
+      ]);
+
+
+
+/*!
+ * The actual options
+ * Copy and paste to your existing chart
+ *
+ * They come in light and dark varieties
+ */
+ var optionsdark = {
+  hAxis: {
+    titleTextStyle: {color: '#607d8b'}, 
+    gridlines: { count:0}, 
+    textStyle: { color: '#b0bec5', fontName: 'Roboto', fontSize: '12', bold: true}
+  },
+  vAxis: {
+    minValue: 0, 
+    gridlines: {color:'#37474f', count:4}, 
+    baselineColor: 'transparent'
+  },
+  legend: {position: 'top', alignment: 'center', textStyle: {color:'#607d8b', fontName: 'Roboto', fontSize: '12'} },
+  colors: ["#3f51b5","#2196f3","#03a9f4","#00bcd4","#009688","#4caf50","#8bc34a","#cddc39"],
+  areaOpacity: 0.24,
+  lineWidth: 1,
+  backgroundColor: 'transparent',
+  chartArea: {
+    backgroundColor: "transparent",
+    width: '100%',
+    height: '80%'
+  },
+      height:200, // example height, to make the demo charts equal size
+      width:400,
+      pieSliceBorderColor: '#263238',
+      pieSliceTextStyle:  {color:'#607d8b' },
+      pieHole: 0.9,
+      bar: {groupWidth: "40" },
+      colorAxis: {colors: ["#3f51b5","#2196f3","#03a9f4","#00bcd4"] },
+      backgroundColor: 'transparent',
+      datalessRegionColor: '#37474f',
+      displayMode: 'regions'
+    };
+
+    // options for light backgrounds, makes use of general styles applied to dark
+    var optionslight = $.extend(true, {}, optionsdark);
+    optionslight['legend']['textStyle'] = {color:'#607d8b'};
+    optionslight['hAxis']['textStyle'] = { color: '#78909c', fontName: 'Roboto', fontSize: '12', bold: true};
+    optionslight['vAxis']['gridlines'] = {color:'#cfd8dc'};
+    optionslight['datalessRegionColor'] = {color:'#f00'};
+    optionslight['pieSliceBorderColor'] = {color:'#eceff1'};
+    // different colors, just to make demo more interesting
+    /*
+    optionslight['colors'] = ["#f44336","#e91e63","#9c27b0","#673ab7","#3f51b5","#2196f3","#03a9f4","#00bcd4","#009688","#4caf50","#8bc34a","#cddc39"];
+    optionslight['colorAxis'] = {colors: ["#f44336","#e91e63","#9c27b0","#673ab7"] };
+    */
+
+/*!
+ * End options
+ *
+ */
+
+
+// draw the demo charts
+var timeout = 200;
+// dark demo charts
+var chart = new google.visualization.AreaChart(document.getElementById('areachart'));
+chart.draw(data2, optionsdark);
+setTimeout(function(){
+  var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+  chart.draw(linechartdata, optionsdark);
+}, timeout*2);
+setTimeout(function(){
+  var chart = new google.visualization.SteppedAreaChart(document.getElementById('steppedareachart'));
+  chart.draw(data3, optionsdark);
+}, timeout*3);
+setTimeout(function(){
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(piedata, optionsdark);
+}, timeout*4);
+setTimeout(function(){
+  var chart2 = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+  chart2.draw(data2, optionsdark);
+}, timeout*5);
+setTimeout(function(){
+  optionsdark.legend = 'none'; // remove legend from maps
+  var chart = new google.visualization.GeoChart(document.getElementById('geochart'));
+  chart.draw(geodata, optionsdark);
+}, timeout*6);
+
+// light demo charts
+setTimeout(function(){
+  var chart = new google.visualization.AreaChart(document.getElementById('areachartlight'));
+  chart.draw(data2, optionslight);
+}, timeout*7);
+setTimeout(function(){
+  var chart = new google.visualization.LineChart(document.getElementById('linechartlight'));
+  chart.draw(linechartdata, optionslight);
+}, timeout*8);
+setTimeout(function(){
+  var chart = new google.visualization.SteppedAreaChart(document.getElementById('steppedareachartlight'));
+  chart.draw(data3, optionslight);
+}, timeout*9);
+setTimeout(function(){
+  var chart = new google.visualization.PieChart(document.getElementById('piechartlight'));
+  chart.draw(piedata, optionslight);
+}, timeout*10);
+setTimeout(function(){
+  var chart2 = new google.visualization.ColumnChart(document.getElementById('columnchartlight'));
+  chart2.draw(data2, optionslight);
+}, timeout*11);
+setTimeout(function(){
+  optionslight.legend = 'none'; // remove legend from maps
+  var chart = new google.visualization.GeoChart(document.getElementById('geochartlight'));
+  chart.draw(geodata, optionslight);
+}, timeout*12);
+}
+
+
+$(window).resize(function(){
+  drawChart();
+});
+</script>
+</body>
+</html>
